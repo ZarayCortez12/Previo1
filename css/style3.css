@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@600&family=Poppins:wght@400;500;600&family=Tilt+Neon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Gabarito:wght@600&family=Poppins:wght@400;500;600&family=Satisfy&family=Tilt+Neon&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+header{
+    height: 20vh;
+    background-color: #000;
+    background-size: cover;
+    background-position: center;
+    padding: 0 2rem;
+}
+body{
+    background: black;
+}
+li{
+    list-style: none;
+}
+.nameGenero{
+    color: #fff;
+    font-family: 'Gabarito', sans-serif;
+    margin-top: 50px;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: -50px;
+}
+#demo{
+    margin-top: 80px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+a:hover{
+    color: rgba(255, 17, 0, 0.61);
+}
+
+/*Header*/
+
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a{
+    font-size: 1.5rem;
+    font-family: 'Tilt Neon', sans-serif;
+}
+
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+    top: 20px;
+}
+
+.navbar .links a{
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar .toggle-btn{
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn{
+    background-color: orange;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.action_btn:hover{
+    scale: 1.05;
+    color: #fff;
+}
+
+.action_btn:active{
+    scale: 0.95;
+}
+
+/*Drow Menu*/
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    height: 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.dropdown_menu.open{ 
+    height: 100px;
+}
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.dropdown_menu .action_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+/*Mensaje*/
+section#hero{
+    height: calc(100vh - 60px); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+#hero h1{
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    font-family: 'Satisfy', cursive;
+}
+
+#hero p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+}
+.card{
+    border-radius: 1rem;
+    box-shadow: 0 5px 5px rgba(228, 215, 215, 0.589);
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem;
+    overflow: hidden;
+    backdrop-filter: blur(1rem);
+    background-color: rgba(255, 255, 255, 0.060);
+    border: 2px rgba(255, 255, 255, 0.18);
+    color: #fff;
+    height: 560px;
+    margin-top: 80px;
+    padding: 2px 2px 2px 2px;
+}
+
+.card img{
+    width: 220px;
+    height: 350px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.row{
+    margin-left: 80px;
+    margin-right: 80px;
+}
+.card h5, p{
+    font-family: 'Poppins', sans-serif;
+}
+
+.card button{
+    font-family: 'Gabarito', sans-serif;
+    background: rgba(255, 0, 0, 0.705);
+    border: red;
+    margin-top: 5px;
+}
+/*Responsive */
+@media (max-width: 1050px){
+    .row{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+
+}
+@media (max-width: 992px){
+    .navbar .links,
+    .navbar .action_btn{
+        display: none;
+    }
+
+    .row{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+
+    .navbar .toggle-btn{
+        display: block;
+    }
+
+    .dropdown_menu{
+        display: block;
+    }
+}
+
+@media (max-width: 576px){
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+    }
+
+    .row{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+}
+    
+/*Animados Card*/
+
+.card:hover
+{
+    border: 2px #f40303cb;
+    background: #f40303cb;
+    color: #050801;
+    box-shadow: 0 0 5px #f40303cb,
+                0 0 25px #f40303cb,
+                0 0 50px #f40303cb,
+                0 0 200px #f40303cb;
+}
+div span{
+    position: absolute;
+    display: block;
+}
+div span:nth-child(1)
+{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg,transparent,rgba(255, 0, 0, 0.781));
+    animation: animate1 1s linear infinite;
+}
+@keyframes animate1
+{
+    0%
+    {
+        left: -100%;
+    }
+    50%,100%
+    {
+        left: 100%;
+    }
+}
+div span:nth-child(2)
+{
+    top: -100%;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,rgba(255, 0, 0, 0.781));
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+@keyframes animate2
+{
+    0%
+    {
+        top: -100%;
+    }
+    50%,100%
+    {
+        top: 100%;
+    }
+}
+div span:nth-child(3)
+{
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(270deg,transparent,rgba(255, 0, 0, 0.781));
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+@keyframes animate3
+{
+    0%
+    {
+        right: -100%;
+    }
+    50%,100%
+    {
+        right: 100%;
+    }
+}
+div span:nth-child(4)
+{
+    bottom: -100%;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,rgba(255, 0, 0, 0.781));
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes animate4
+{
+    0%
+    {
+        bottom: -100%;
+    }
+    50%,100%
+    {
+        bottom: 100%;
+    }
+}
+/*Modal*/
+.modal-header h5{
+    font-family: 'Poppins', sans-serif;
+}
+
+.modal-body input, label{
+    font-family: 'Gabarito', sans-serif;
+}
+.modal-body input{
+    border: none;
+    cursor: pointer;
+}
+#imgElementId{
+    margin-left: 70px;
+}
+#btn{
+    margin-top: 5px;
+}
+footer{
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+    height: 40px;
+}

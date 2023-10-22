@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel="shortcut icon" href="https://i.pinimg.com/originals/69/c0/db/69c0db9a1b2cec7299bd1ebe8913c5ff.png">
+    <title>Peliculas Favoritas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src='js/main.js'></script>
+    <link rel="stylesheet" href="css/style2.css">
+    <script src='js/jquery-3.2.1.min.js'></script>
+    <script src='js/bootstrap.min.js'></script>
+    <script src='js/popper.min.js'></script>
+</head>
+<body onload="verPeliculas()">
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-film fa-bounce fa-lg" style="color: #fafafa; "></i>
+        <a href="#">PlatMovie</a>
+      </div>  
+      <ul class="links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="favoritos.html">Ver Lista de Favoritos</a></li>
+      </ul>
+      <div class="toggle-btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+
+    <div class="dropdown_menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="favoritos.html">Ver Lista de Favoritos</a></li>
+    </div>
+  </header>
+  <script>
+    const toggleBtn = document.querySelector('.toggle-btn');
+    const toggleBtnIcon = document.querySelector('.toggle-btn i');
+    const dropDownMenu = document.querySelector('.dropdown_menu');
+
+      toggleBtn.onclick = function () {
+        dropDownMenu.classList.toggle('open')
+        const isOpen = dropDownMenu.classList.contains('open')
+
+        toggleBtnIcon.classList = isOpen
+          ? 'fa-solid fa-xmark'
+          : 'fa-solid fa-bars'
+        
+      }
+  </script>
+    <div id="titulo"></div>
+    <div id="catalogo">
+        
+    </div>
+    
+  <content>  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Detalles de la Pelicula</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+            
+                <form id="frmComprar" name="frmComprar">
+                        <label for="nombre" class="form-label">Pelicula</label>
+                        <input type="text" id="nombre" name="nombre" class="form-control" readonly>
+
+                        <label for="cantidad" class="form-label">Descripción:</label>
+                        <input type="text" id="descripcion" name="descripcion" class="form-control" readonly>
+
+                        <label for="valor" class="form-label">Fecha de Salida:</label>
+                        <input type="text" id="fechaSalida" name="fechaSalida" class="form-control" readonly>
+                        <div class="modal-body"><img id="imgElementId" src="" class="imgElementId" alt="Cinque Terre" width="304" height="236" />   </div>      
+
+                </form>
+                <div id="divRta">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" onclick="agregarALista()">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>    
+    </content>
+    <footer>
+      <p>2023 &copy; mariazaraycc@ufps.edu.co</p>
+    </footer>
+</body>
+</html>
